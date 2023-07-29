@@ -1,6 +1,6 @@
 const StartScreen = ({ numQuestions, dispatch }) => {
   return (
-    <div className="text-center text-slate-200">
+    <div className="text-center ">
       <h2 className="text-3xl font-bold">Welcome to The React Quiz!</h2>
       <h3 className="text-xl my-4">
         {numQuestions} questions to test your React mastery
