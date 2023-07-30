@@ -7,15 +7,15 @@ const Options = ({ question, dispatch, answer }) => {
       <div className="my-2">
         {question.options.map((option, index) => (
           <button
-            className={` my-2 w-[75%] py-3 rounded-full transition-all duration-500 hover:bg-teal-700 hover:mx-5 bg-teal-800  ${
+            className={` my-2 w-[75%] py-3 rounded-full transition-all duration-500 ${
               index === answer ? "mx-5" : " "
             }
             ${
               hasAnswered
                 ? index === question.correctOption
-                  ? "bg-teal-800"
+                  ? "bg-teal-700"
                   : "bg-amber-700"
-                : ""
+                : " hover:bg-teal-700 hover:mx-5 bg-teal-800 "
             }
             `}
             key={option}
