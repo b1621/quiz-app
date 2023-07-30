@@ -1,11 +1,26 @@
-const Options = ({ question }) => {
+const Options = ({ question, dispatch, answer }) => {
+  const hasAnswered = answer !== null;
+
+  console.log("correct option : ", question.correctOption);
   return (
     <>
       <div className="my-2">
-        {question.options.map((option) => (
+        {question.options.map((option, index) => (
           <button
-            className=" my-2 w-[75%] bg-teal-900 py-3 rounded-full transition-all duration-500 hover:bg-teal-800 hover:mx-5"
+            className={` my-2 w-[75%] py-3 rounded-full transition-all duration-500 hover:bg-teal-700 hover:mx-5 bg-teal-800  ${
+              index === answer ? "mx-5" : " "
+            }
+            ${
+              hasAnswered
+                ? index === question.correctOption
+                  ? "bg-teal-800"
+                  : "bg-amber-700"
+                : ""
+            }
+            `}
             key={option}
+            disabled={hasAnswered}
+            onClick={() => dispatch({ type: "newAnswer", payload: index })}
           >
             {option}
           </button>
