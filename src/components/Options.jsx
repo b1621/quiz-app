@@ -1,13 +1,13 @@
 const Options = ({ question, dispatch, answer }) => {
   const hasAnswered = answer !== null;
 
-  console.log("correct option : ", question.correctOption);
+  // console.log("correct option : ", question.correctOption);
   return (
     <>
       <div className="my-2">
         {question.options.map((option, index) => (
           <button
-            className={` my-2 w-[75%] py-3 rounded-full transition-all duration-500 ${
+            className={` my-2 w-full py-3 rounded-full transition-all duration-500 ${
               index === answer ? "mx-5" : " "
             }
             ${

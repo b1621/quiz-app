@@ -1,7 +1,9 @@
 // import React from 'react'
 
 const Main = ({ children }) => {
-  return <div className=" text-slate-200 w-1/2 mx-auto my-16">{children}</div>;
+  return (
+    <div className=" text-slate-200 w-[500px] mx-auto my-10">{children}</div>
+  );
 };
 
 export default Main;
