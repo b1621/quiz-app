@@ -1,9 +1,15 @@
-const Progress = ({ index, numQuestions, points, maxPossiblePoints }) => {
+const Progress = ({
+  index,
+  numQuestions,
+  points,
+  maxPossiblePoints,
+  answer,
+}) => {
   return (
     <header className=" my-5">
       <progress
         max={numQuestions}
-        value={index}
+        value={index + Number(answer !== null)}
         className=" w-full rounded-full bg-slate-300"
       />
       <div className="flex flex-row justify-between">
