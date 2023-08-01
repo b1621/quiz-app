@@ -1,6 +1,6 @@
 import React from "react";
 
-const FinishScreen = ({ points, maxPossiblePoints, highscore }) => {
+const FinishScreen = ({ dispatch, points, maxPossiblePoints, highscore }) => {
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;
@@ -19,7 +19,10 @@ const FinishScreen = ({ points, maxPossiblePoints, highscore }) => {
       </div>
       <p className=" w-fit mx-auto my-5">(HighScore: {highscore} point)</p>
       <div className="flex justify-end my-3">
-        <button className=" border mr-3 my-2 rounded-full px-10 py-1">
+        <button
+          className=" border mr-3 my-2 rounded-full px-10 py-1"
+          onClick={() => dispatch({ type: "restart" })}
+        >
           Restart Quiz
         </button>
       </div>
